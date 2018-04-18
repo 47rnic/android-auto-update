@@ -8,7 +8,7 @@ import java.io.File;
 final class StorageUtils {
 
     /**
-     * 获取应用的缓存目录
+     * Get the application's cache directory
      */
     public static File getCacheDirectory(Context context) {
         File appCacheDir = context.getCacheDir();

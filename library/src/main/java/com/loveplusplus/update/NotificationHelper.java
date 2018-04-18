@@ -28,9 +28,9 @@ public class NotificationHelper extends ContextWrapper {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "应用更新", NotificationManager.IMPORTANCE_LOW);
-            mChannel.setDescription("应用有新版本");
-            mChannel.enableLights(true); //是否在桌面icon右上角展示小红点
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "Apply update", NotificationManager.IMPORTANCE_LOW);
+            mChannel.setDescription("App has new version");
+            mChannel.enableLights(true); // Is the red dot displayed in the top right corner of the desktop icon?
             getManager().createNotificationChannel(mChannel);
         }
     }
@@ -70,7 +70,7 @@ public class NotificationHelper extends ContextWrapper {
     private NotificationCompat.Builder getNofity(String text) {
         return new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                 .setTicker(getString(R.string.android_auto_update_notify_ticker))
-                .setContentTitle("应用更新")
+                .setContentTitle("Apply update")
                 .setContentText(text)
                 .setSmallIcon(getSmallIcon())
                 .setLargeIcon(getLargeIcon())
@@ -85,7 +85,7 @@ public class NotificationHelper extends ContextWrapper {
 
 
     private int getSmallIcon() {
-        //设置 nofication 的图标 直接读取小米推送配置的图标
+        // Set the icon of the nofication directly read the icon of the millet push configuration
         int icon = getResources().getIdentifier("mipush_small_notification", "drawable", getPackageName());
         if (icon == 0) {
             icon = getApplicationInfo().icon;

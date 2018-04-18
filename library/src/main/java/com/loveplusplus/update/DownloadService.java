@@ -60,13 +60,14 @@ public class DownloadService extends IntentService {
                 out.write(buffer, 0, byteread);
 
                 int progress = (int) (bytesum * 100L / bytetotal);
-                // 如果进度与之前进度相等，则不更新，如果更新太频繁，否则会造成界面卡顿
+                // If the progress is equal to the previous progress, it will not be updated.
+                // If the update is too frequent, it will cause the interface to freeze.
                 if (progress != oldProgress) {
                     notificationHelper.updateProgress(progress);
                 }
                 oldProgress = progress;
             }
-            // 下载完成
+            // Download completed
 
             ApkUtils.installAPk(this, apkFile);
 

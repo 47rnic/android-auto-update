@@ -13,7 +13,7 @@ android {
     }
 
 
-    //库项目不生成 BuildConfig
+    //Library project does not generate BuildConfig
     libraryVariants.all {
         it.generateBuildConfig.enabled = false
     }
