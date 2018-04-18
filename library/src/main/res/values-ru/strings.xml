@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_auto_update_dialog_title">Доступна новая версия</string>
+
+    <string name="android_auto_update_notify_ticker">Доступна новая версия. Нажмите, чтобы обновить</string>
+    <string name="android_auto_update_notify_content">Доступна новая версия. Нажмите, чтобы обновить</string>
+
+    <string name="android_auto_update_dialog_btn_download">Загрузить сейчас</string>
+    <string name="android_auto_update_dialog_btn_cancel">Отмена</string>
+
+    <string name="android_auto_update_toast_no_new_update">Установлена последняя версия</string>
+
+    <string name="android_auto_update_download_progress">Загрузка:%1$d%%</string>
+
+    <string name="android_auto_update_dialog_checking">Проверка версии</string>
+</resources>
