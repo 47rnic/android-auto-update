@@ -1,5 +1,7 @@
-apply plugin: 'com.android.library'
+version = '1.2'
 
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 27
@@ -9,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 3
-        versionName '1.2'
+        versionName version
     }
 
 
@@ -19,6 +21,25 @@ android {
     }
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'ru.aurrum.mobile'
+            artifactId 'android-auto-update'
+
+            artifact bundleRelease
+        }
+    }
+    repositories {
+        maven {
+            url "${mavenRepositoryUrl}"
+            credentials {
+                username = "${mavenRepositoryUsername}"
+                password = "${mavenRepositoryPassword}"
+            }
+        }
+    }
+}
 
 dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
